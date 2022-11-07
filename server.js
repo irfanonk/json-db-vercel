@@ -25,12 +25,6 @@ server.get("/tags", function (req, res) {
     });
   });
   return res.jsonp(allTags);
-  var tags = db.find("items").find({ tags }).value();
-  if (tags) {
-    res.jsonp(tags);
-  } else {
-    res.sendStatus(404);
-  }
 });
 server.use(router);
 server.listen(PORT, () => {
