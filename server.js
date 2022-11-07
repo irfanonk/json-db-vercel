@@ -20,8 +20,8 @@ server.get("/tags", function (req, res) {
   const items = db.items;
   items.forEach((item) => {
     item.tags.forEach((tag) => {
-      if (allTags.includes(tag)) return;
-      allTags.push(tag);
+      if (allTags.find((item) => item.name === tag)) return;
+      allTags.push({ name: tag, slug: tag });
     });
   });
   return res.jsonp(allTags);
