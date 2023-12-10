@@ -1,10 +1,10 @@
 lockfileVersion: 5.4
 
 specifiers:
-  json-server: ^0.17.0
+  json-server: ^0.17.4
 
 dependencies:
-  json-server: 0.17.0
+  json-server: 0.17.4
 
 packages:
 
