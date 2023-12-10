@@ -29,6 +29,12 @@ server.use(
 
 server.post("/login", function (req, res) {
   const { email, password } = req.body;
+  if (!email || !password) {
+    return res.jsonp({
+      code: "error",
+      message: "invalid credentials",
+    });
+  }
   const users = db.users;
   const user = users.filter((user) => user.email === email)[0];
   if (!user)
