@@ -15,17 +15,17 @@ server.use(
     "/blog/:resource/:id/show": "/:resource/:id",
   })
 );
-server.get("/tags", function (req, res) {
-  const allTags = [];
-  const items = db.items;
-  items.forEach((item) => {
-    item.tags.forEach((tag) => {
-      if (allTags.find((item) => item.name === tag)) return;
-      allTags.push({ name: tag, slug: tag });
-    });
-  });
-  return res.jsonp(allTags);
-});
+// server.get("/tags", function (req, res) {
+//   const allTags = [];
+//   const items = db.items;
+//   items.forEach((item) => {
+//     item.tags.forEach((tag) => {
+//       if (allTags.find((item) => item.name === tag)) return;
+//       allTags.push({ name: tag, slug: tag });
+//     });
+//   });
+//   return res.jsonp(allTags);
+// });
 
 server.post("/login", function (req, res) {
   const { email, password } = req.body;
