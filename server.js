@@ -6,7 +6,7 @@ const middlewares = jsonServer.defaults();
 const db = require("./db.json");
 
 const PORT = 8001;
-server.use(jsonServer.bodyParser); //necessaru to parse req body
+server.use(jsonServer.bodyParser); //necessary to parse req body
 server.use(middlewares);
 // Add this before server.use(router)
 server.use(
