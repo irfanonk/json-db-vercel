@@ -32,7 +32,7 @@ server.post("/login", function (req, res) {
   if (!email || !password) {
     return res.jsonp({
       code: "error",
-      message: "invalid credentials",
+      message: "credentials required",
     });
   }
   const users = db.users;
@@ -47,6 +47,7 @@ server.post("/login", function (req, res) {
       code: "error",
       message: "invalid credentials",
     });
+
   return res.jsonp({
     success: true,
     data: user,
